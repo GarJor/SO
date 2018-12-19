@@ -1,0 +1,42 @@
+# INODOS LIBRES?
+
+df -i me da informacion sobre los inodos en el sistema de fitxeros:
+S.ficheros     Nodos-i NUsados  NLibres   NUso% Montado en
+/dev/sda8      27942912  462155 27480757    2%  /
+
+# INODO PARA /?
+$ ls -id /
+2 / (el inodo de / es 2)
+
+# DE ENLACES (LINKS) TIENE EL INODO RAIZ?
+$ ls -la /
+drwxr-xr-x  24 root root  4096 jun  9  2018 .
+drwxr-xr-x  24 root root  4096 jun  9  2018 ..
+...
+
+por tanto, 24.
+
+LISTA DE LLAMADAS A SISTEMA EN EL COMANDO ANTERIOR(ls -la /)?
+strace -c ls -la / 
+#read calls = 17
+
+strace -e trace=/read ls -la /
+list:
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@k\0\0\0\0\0\0"..., 832) = 832
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240\33\2\0\0\0\0\0"..., 832) = 832
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340!\0\0\0\0\0\0"..., 832) = 832
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\16\0\0\0\0\0\0"..., 832) = 832
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@b\0\0\0\0\0\0"..., 832) = 832
+read(3, "nodev\tsysfs\nnodev\trootfs\nnodev\tr"..., 1024) = 376
+read(3, "", 1024)                       = 0
+read(3, "# Locale name alias data base.\n#"..., 4096) = 2995
+read(3, "", 4096)                       = 0
+read(3, "# /etc/nsswitch.conf\n#\n# Example"..., 4096) = 540
+read(3, "", 4096)                       = 0
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240\22\0\0\0\0\0\0"..., 832) = 832
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p \0\0\0\0\0\0"..., 832) = 832
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220@\0\0\0\0\0\0"..., 832) = 832
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P#\0\0\0\0\0\0"..., 832) = 832
+read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\v\0\0\0\v\0\0\0\0"..., 4096) = 2637
+read(3, "TZif2\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\v\0\0\0\v\0\0\0\0"..., 4096) = 1663
+

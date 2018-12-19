@@ -1,0 +1,95 @@
+FORK SEQUENCIAL:
+
+int pid;
+for(int i = 1; i < N; ++i) {
+	pid = fork();
+	if (pid == 0) {
+		//HIJO
+		exit(0);
+	}
+	else if (pid < 0) {
+		//control error
+	}
+	else {
+		//PADRE
+		waitpid(-1,NULL,0);
+	}
+}
+
+---------------------------------------------
+
+FORK CONCURRENTE:
+
+int pid;
+for(int i = 0; i < N; ++i) {
+	pid = fork();
+	if (pid == 0) {
+		//HIJO
+		exit(0);
+	}
+	else if (pid < 0) {
+		//control error
+	}
+}
+int ret;
+while((ret = waitpid(-1,NULL,0)) > 0);
+
+---------------------------------------------
+
+COMANDOS I USOS DE C:
+
+	-execvp(param1, param2) : param1 = 'programa_a_mutar' , param2 = argv_de_param1[] (el primer element ha de ser param1).
+	-ps -s #zombie
+	-ps -A #all process tot i k a casa amb -e em funcionava
+	-Sprintf: sprintf(buff, "char: %c, string: %s, puntero %p \n",'a', "string", buffer);
+	- Write: write(canal,buffer,strlen(buffer));
+	-kill -SIGHUP pid_del_proceso_padre
+
+EXEMPLES:
+
+	-lectura des status, exit i signal code, esper activa amb SIGCHILD capturat signals00.c
+	- mes dun signal capturat, espera bloquejat(sigsuspend): signals10.c
+	-kill, esperar a lantrada d'una tecla i constants definides: exemCat.c
+
+---------------------------------------------
+////////////////////////////////////////////
+---------------------------------------------
+INCLUDES, ERRORS CONTROL AND FAST INIT:
+
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <signal.h>
+
+void Usage() {
+	printf("Usage:signals00 arg1 [arg2..argn]\n");
+}
+
+void error_y_exit(char *s, int error) {
+	perror(s);
+	exit(error);
+}
+
+int main(int argc, char *argv[])
+{
+
+
+}
+
+----------------------------------------------------
+SIGNALS ESSENCIALS:
+
+sigset_t mask;
+struct sigaction sa;
+//bloqueig de signals
+sigemptyset(&mask);
+sigaddset(&mask, SIGCHLD);
+sigprocmask(SIG_BLOCK, &mask, NULL);
+
+
+//reprogamacio del signal
+sa.sa_handler=trat;
+sa.sa_flags=SA_RESTART; //evitem interrupcions per si revem la senyal mentre estem executant una syscall
+sigaction(SIGCHLD,&sa,NULL);

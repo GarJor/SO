@@ -1,0 +1,25 @@
+¿Qué dirección de memoria devuelve la llamada a sbrk(0)? ¿Qué pasa si intentamos acceder
+a esta dirección?
+
+retorna la posicio mes alta del heap que abans (de la crida) no era valida (el top del heap), despres de la crida pot ser que ho sigui, si es reserva . Segmentacion fault, ja que no es reseva res, la posicio seguira sent invalida
+
+
+Crea un soft-link a numeros.txt y llámalo numeros.txt.sl. ¿Están ambos ficheros
+relacionados con el mismo inodo? ¿Por qué? ¿Qué comando/s has usado para comprobarlo?
+
+/**************************************************************
+# ln –s pr.txt sl_pr //exemple de creacio de softlink a pr.txt
+# ln pr.txt hl_pr //exemple de creacio de hardlink a pr.txt
+****************************************************************/
+
+$ ln -s numeros.txt sflink
+
+
+No, el inodo es diferente puesto que un soft link es un fitxero que apunta a un path, y como fitxero tiene su propio inodo.
+
+$ ls -ial
+...
+26477002 -rw-r--r--  1 jordi jordi   16 dic 19 14:58 numeros.txt
+...
+26476910 lrwxrwxrwx  1 jordi jordi   11 dic 19 18:27 sflink -> numeros.txt
+...

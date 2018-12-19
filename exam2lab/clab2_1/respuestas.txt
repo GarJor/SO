@@ -1,0 +1,6 @@
+CREA UNA PIPE LLAMADA "mipipe". QUE COMANDO HAS UTILIZADO?
+$ mknod mipipe p
+
+EJECUTA EN LA SHELL LOS COMANDOS NECESARIOS PARA TACHAR LA LETRA "n" DE input.txt CREANDO UN PROCESO buscaLetra Y UN PROCESO tachaCaracteres QUE SE COMUNIQUEN CON LA PIPE mipipe
+$ ./buscaLetra n test.txt > mipipe &
+$ ./tachaCaracteres test.txt < mipipe 
