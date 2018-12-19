@@ -1,6 +1,6 @@
 # SO
 
-Per obtenir informacio del contingut de exam2lab/ podeu utilitzeu el programa queFa:
+Per obtenir informacio del contingut de exam2lab/ utilitzeu el programa queFa:
 
 ### EXEMPLES D'US:
 
