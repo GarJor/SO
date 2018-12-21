@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
   int fd = open(argv[1],O_WRONLY);
   if(fd == -1) surtxerror("open() fallit",2);
   char buffer[256];
-  int tam = lseek(fd,3,SEEK_END);
+  int tam = lseek(fd,0,SEEK_END);
   int count=0;
   int p;
 

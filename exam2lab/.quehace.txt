@@ -1,21 +1,55 @@
-_____ /clab2_1/buscaLetra.c:    Programa recibe como parametro una letra i un fitxero y escribe en el stdOUT todas las posiciones del fitxero donde aparece la letra   (TAGS: read, write, char, strcmp, entero-representacion-interna, control_error)
-_____ /clab2_1/tachaCaracteres.c:   Programa que recibe como parametro el nombre de un fitxero y por entrada estandardlas posiciones que ocupan los caracteres que se quieren tachar. el codigo accede directamente a cada posicion y substituira el caracter por 'X'. El codigp comprueba que la posicion forma parte del fitxero    (TAGS: read, write, lseek-O_WRONLY, entero-representacion-interna, control_errors)
-_____ /clab2_1/respuestas.txt:    Teoria    (TAGS: mknod, pipe, pipe_con_nombre, comunicacion_con_pipe)
-_____ /clab2_1/tachaVocales.c:    Programa que busca, mutando a buscaLetra, todas las vocales minusculas del fitxero que recibe por parametro y las tacha, mutando tachaCaracteres. La comunicacion necesaria se hace con pipes sin nombre enre procesos. (TAGS: pipe, close, dup2, fork, waitpid, execlp, pipe_sin_nombre, comunicacion_con_pipe)
-_____ /clab2/set_holes.c:   Programa que recibe como primer parametro un fitxero con posiciones (enteros) y como segundo un fitxero de texto con enteros, escribe 0 en el segundo fitxero en las posiciones leidas en el primero (TAGS: open-O_RDONLY-O_WRONLY, lseek, write, entero-representacion-interna)
-_____ /clab2/race_cond.c:   Programa que recibe un entero por parametro, que servira para simcronizar los writes/read del padre y el hijo utilizando los bloqueos de write/read cuando se usa pipe sin nombre   (TAGS: pipe_sin_nombre, comunicacion_con_pipe, write, read, sincronizar, sync)
-_____ /clab2/answers.txt:   Teoria    (TAGS: inodo-libre, inodo-directorio, enlaces_a_inodo, lista_llamadas_a_sistema, syscalls, strace, df, numero_llamadas_sistema)
-_____ /clab2/positions:   Parametre 1 de set_holes que conte els numeros 0, 4, 5, i 9   (TAGS: exemple, entero-representacion-interna)
-_____ /clab2/0_to_9.txt:    Parametre 2 de set_holes  (TAGS: exemple)
-_____ /fork-signal-essencials.txt:    Vaines del primer parcial   (TAGS: signals, fork-sequencial, fork-concurrente, handlers, sigaction, sigprocmask)
-_____ /fastInit.c:    sample per lexam.
-_____ /queFa.c:   Soc jo :)
-_____ /clab2_2/respuestas.txt:    Teoria    (TAGS: softlink, hardlink, inodo, sbrk, memoria, heap)
-_____ /clab2_2/suma_enteros.c:    Recibe como parámetro el nombre de un fichero que contiene números enteros en formato interno sin ninguna separación. Lee los números del fichero y los suma. El resultado de la suma se imprime por el terminal y en un fichero ("suma.txt"). Si el fitxero de salida ya existe se trunca, sino se crea    (TAGS: open-O_CREAT-O_TRUNC, permisos, entero-representacion-interna, write)
-_____ /clab2_2/cuenta_lineas.c:   Programa que emula el comando: cat <parametro1> | grep <parametro2> | wc -l Para ello utiliza comunicacion entre procesos padre-hijo con pipes sin nombres.   (TAGS: sync, sincronizar, comunicacion_con_pipe, pipe_sin_nombre, fork, execlp, dup2, close)
-_____ /clab2_2/ordenar.c:   Programa que recibe como parámetro un fichero que contiene caracteres numéricos del 0 al 9 sin espacios y sin carácter de final de línea. Ordenar ascendentemente los números leyendo y escribiendo en el mismo fichero. El algoritmo lee caracteres adyacentes de dos en dos empezando en la posición 0, y si no están en el orden correcto los intercambia. Repite el procedimiento hasta que ya no hace ningun canvio    (TAGS:  read, lseek-SEEK_SET, lseek-SEEK_CUR, lseek-SEEK_END, write)
-_____ /clab2_2/numeros.txt:  Parametre de suma_enteros conte els numeros 0, 4, 5, i 9   (TAGS: exemple, entero-representacion-interna)
-_____ /clab2_2/para-ordenar.txt:  Parametre de ordenar   (TAGS: exemple)
-_____ /clab2_2/sflink:    Softlink a numeros.txt   (TAGS: exemple)
-_____ /MrRobb/resumE-S_MrRobb.txt: Teoria resumida entrades i sortides del github de MrRobb
-_____ /MrRobb/resumE-S_MrRobb.pdf: Teoria resumida entrades i sortides del github de MrRobb
+/clab2_1/buscaLetra.c:    Programa recibe como parametro una letra i un fitxero y escribe en el stdOUT todas las posiciones del fitxero donde aparece la letra   (TAGS: read, write, char, strcmp, entero-representacion-interna, control_error)
+
+/clab2_1/tachaCaracteres.c:   Programa que recibe como parametro el nombre de un fitxero y por entrada estandardlas posiciones que ocupan los caracteres que se quieren tachar. el codigo accede directamente a cada posicion y substituira el caracter por 'X'. El codigp comprueba que la posicion forma parte del fitxero    (TAGS: read, write, lseek-O_WRONLY, entero-representacion-interna, control_errors)
+
+/clab2_1/respuestas.txt:    Teoria    (TAGS: mknod, pipe, pipe_con_nombre, comunicacion_con_pipe)
+
+/clab2_1/tachaVocales.c:    Programa que busca, mutando a buscaLetra, todas las vocales minusculas del fitxero que recibe por parametro y las tacha, mutando tachaCaracteres. La comunicacion necesaria se hace con pipes sin nombre enre procesos. (TAGS: pipe, close, dup2, fork, waitpid, execlp, pipe_sin_nombre, comunicacion_con_pipe)
+
+/clab2/set_holes.c:   Programa que recibe como primer parametro un fitxero con posiciones (enteros) y como segundo un fitxero de texto con enteros, escribe 0 en el segundo fitxero en las posiciones leidas en el primero (TAGS: open-O_RDONLY-O_WRONLY, lseek, write, entero-representacion-interna)
+
+/clab2/race_cond.c:   Programa que recibe un entero por parametro, que servira para simcronizar los writes/read del padre y el hijo utilizando los bloqueos de write/read cuando se usa pipe sin nombre   (TAGS: pipe_sin_nombre, comunicacion_con_pipe, write, read, sincronizar, sync)
+
+/clab2/answers.txt:   Teoria    (TAGS: inodo-libre, inodo-directorio, enlaces_a_inodo, lista_llamadas_a_sistema, syscalls, strace, df, numero_llamadas_sistema)
+
+/clab2/positions:   Parametre 1 de set_holes que conte els numeros 0, 4, 5, i 9   (TAGS: exemple, entero-representacion-interna)
+
+/clab2/0_to_9.txt:    Parametre 2 de set_holes  (TAGS: exemple)
+
+/fork-signal-essencials.txt:    Vaines del primer parcial   (TAGS: signals, fork-sequencial, fork-concurrente, handlers, sigaction, sigprocmask)
+
+/fastInit.c:    sample per lexam.
+
+/queFa.c:   Soc jo :)
+
+/clab2_2/respuestas.txt:    Teoria    (TAGS: softlink, hardlink, inodo, sbrk, memoria, heap)
+
+/clab2_2/suma_enteros.c:    Recibe como parámetro el nombre de un fichero que contiene números enteros en formato interno sin ninguna separación. Lee los números del fichero y los suma. El resultado de la suma se imprime por el terminal y en un fichero ("suma.txt"). Si el fitxero de salida ya existe se trunca, sino se crea    (TAGS: open-O_CREAT-O_TRUNC, permisos, entero-representacion-interna, write)
+
+/clab2_2/cuenta_lineas.c:   Programa que emula el comando: cat <parametro1> | grep <parametro2> | wc -l Para ello utiliza comunicacion entre procesos padre-hijo con pipes sin nombres.   (TAGS: sync, sincronizar, comunicacion_con_pipe, pipe_sin_nombre, fork, execlp, dup2, close)
+
+/clab2_2/ordenar.c:   Programa que recibe como parámetro un fichero que contiene caracteres numéricos del 0 al 9 sin espacios y sin carácter de final de línea. Ordenar ascendentemente los números leyendo y escribiendo en el mismo fichero. El algoritmo lee caracteres adyacentes de dos en dos empezando en la posición 0, y si no están en el orden correcto los intercambia. Repite el procedimiento hasta que ya no hace ningun canvio    (TAGS:  read, lseek-SEEK_SET, lseek-SEEK_CUR, lseek-SEEK_END, write)
+
+/clab2_2/numeros.txt:  Parametre de suma_enteros conte els numeros 0, 4, 5, i 9   (TAGS: exemple, entero-representacion-interna)
+
+/clab2_2/para-ordenar.txt:  Parametre de ordenar   (TAGS: exemple)
+
+/clab2_2/sflink:    Softlink a numeros.txt   (TAGS: exemple)
+
+/MrRobb/resumE-S_MrRobb.md: Teoria resumida entrades i sortides del github de MrRobb
+
+/MrRobb/resumE-S_MrRobb.pdf: Teoria resumida entrades i sortides del github de MrRobb
+
+/MrRobb/comandosE-S_MrRobb.pdf: Comandos del tema entrades i sortides del github de MrRobb   (TAGS: comandos_E-S)
+
+/MrRobb/resumProc-Mem_MrRobb.md: Teoria resumida procesos, signals i memoria del github de MrRobb
+
+/MrRobb/comandosProc-Mem_MrRobb.pdf: Comandos del tema procesos, signals i memoria del github de MrRobb (TAGS: comandos_Proc-Mem)
+
+/clab2_3/ej1.c:   Recibe un valor numérico (entero positivo) como parámetro, reserva un espacio de memoria de tantos “int” como indique este valor usando “malloc”. Despues muestra en termina “Malloc ha reservado X Bytes”, donde X es la cantidad de bytes que comprende la región de memoria del Heap que ha reservado malloc. A continuación, recorre el vector inicializándolo con el valor de la iteración del bucle (es decir, un valor entero) y libera memoria.Finalmente hay una espera activa para que no finalice la ejecución hasta que lo indiques por terminal.   (TAGS: malloc, sbrk)
+
+/clab2_3/ej2.c:   A partir del codigo ej1.c cogiendo un parametro mas que sera un file, añade antes del free(): peoceso hijo que se bloquea con signal USR1 y espera a que el padre lo desbloquea, cuando se debloque lee el file.txt y muestra los numeros que contiene por pantalla. El padre inserta a cada iteracion de un blucle el contenido del vector de numeros para la posicion indice del bucle en el file, cuando termina manda SIGUSR1 al hijo.    (TAGS: malloc, sbrk, signals, sigaction, fork, lseek, lseek-SEEK_SET)
+
+/masEjemplos/escritor_pipe_que_espera.c:    Programa que espera un lector de la pipe que abre tratando con el error ENXIO   (TAGS: pipe, pipe_con_nombre, ENXIO-errno, open, open-O_WRONLY-O_NONBLOCK)
+
+/masEjemplos/sa_restart__flag.c:    Pragrama que juega con la flag de restart de SIGINT para no terminar debido al relanzamiento del open()   (TAGS: signals, sigaction, sa_flags-SA_RESTART)

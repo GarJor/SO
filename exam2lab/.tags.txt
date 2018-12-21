@@ -1,11 +1,14 @@
 char
 close
+comandos_E-S
+comandos_Proc-Mem
 comunicacion_con_pipe
 control_errors
 df
 dup2
 enlaces_a_inodo
 entero-representacion-interna
+ENXIO-errno
 execlp
 exemple
 fork
@@ -22,9 +25,12 @@ lseek-O_WRONLY
 lseek-SEEK_END
 lseek-SEEK_SET
 lseek-SEEK_CUR
+malloc
 memoria
 mknod
 numero_llamadas_sistema
+open
+open-O_WRONLY-O_NONBLOCK
 open-O_CREAT-O_TRUNC
 open-O_RDONLY-O_WRONLY
 permisos
@@ -32,6 +38,7 @@ pipe
 pipe_con_nombre
 pipe_sin_nombre
 read
+sa_flags-SA_RESTART
 sbrk
 sigaction
 signals

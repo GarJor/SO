@@ -93,3 +93,8 @@ sigprocmask(SIG_BLOCK, &mask, NULL);
 sa.sa_handler=trat;
 sa.sa_flags=SA_RESTART; //evitem interrupcions per si revem la senyal mentre estem executant una syscall
 sigaction(SIGCHLD,&sa,NULL);
+
+//preparem la mascara per a la espera bloquejant sigsuspent, on nomes acceptara els dos signals que ens interessi
+		sigfillset(&mask);
+		sigdelset(&mask, SIGCHLD);
+		sigsuspend(&mask)
