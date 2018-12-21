@@ -34,8 +34,6 @@
 
 /clab2_2/para-ordenar.txt:  Parametre de ordenar   (TAGS: exemple)
 
-/clab2_2/sflink:    Softlink a numeros.txt   (TAGS: exemple)
-
 /MrRobb/resumE-S_MrRobb.md: Teoria resumida entrades i sortides del github de MrRobb
 
 /MrRobb/resumE-S_MrRobb.pdf: Teoria resumida entrades i sortides del github de MrRobb
